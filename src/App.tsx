@@ -150,7 +150,16 @@ export default function App() {
           <FadeIn>
             <h2 className="text-3xl md:text-5xl font-serif text-center mb-12 leading-tight">
               Dê o play e descubra como <br className="hidden md:block" />
-              <span className="italic text-[var(--color-terracotta)]">parar de se abandonar.</span>
+              <span className="relative inline-block mt-4">
+                <span className="relative z-10 italic text-[var(--color-moss)] px-4 py-1">parar de se abandonar.</span>
+                <motion.span
+                  initial={{ width: 0 }}
+                  whileInView={{ width: '100%' }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="absolute inset-0 bg-white rounded-lg shadow-xl shadow-white/10"
+                ></motion.span>
+              </span>
             </h2>
             <div className="aspect-[9/16] max-w-[400px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-[var(--color-sand)]/20 bg-[var(--color-charcoal)]">
               <iframe
