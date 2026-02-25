@@ -27,47 +27,64 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[var(--color-sand)] text-[var(--color-charcoal)] selection:bg-[var(--color-moss)] selection:text-[var(--color-sand)]">
       {/* BLOCO 1: HERO SECTION */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20 overflow-hidden">
-        {/* Background Image Placeholder */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://picsum.photos/seed/claudia-hero/1920/1080?blur=2"
-            alt="Background"
-            className="w-full h-full object-cover opacity-20"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-sand)]/80 via-[var(--color-sand)]/95 to-[var(--color-sand)]"></div>
-        </div>
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-24 overflow-hidden bg-[var(--color-sand)]">
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Coluna Texto */}
+            <div className="order-1 md:order-1 text-left">
+              <FadeIn>
+                <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-widest text-[var(--color-terracotta)] uppercase bg-[var(--color-terracotta)]/10 rounded-full mb-8">
+                  Psicologia & Identidade
+                </span>
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[var(--color-moss)] mb-8 leading-[1.1]">
+                  Você não está exausta apenas pelo excesso de trabalho.<br />
+                  <span className="italic font-light text-[var(--color-terracotta)]">Você está cansada de se abandonar.</span>
+                </h1>
+              </FadeIn>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[var(--color-moss)] mb-6 leading-tight">
-              Você não está exausta apenas pelo excesso de trabalho.<br />
-              <span className="italic text-[var(--color-terracotta)]">Você está cansada de se abandonar.</span>
-            </h1>
-          </FadeIn>
+              <FadeIn delay={0.2}>
+                <p className="text-lg md:text-xl text-[var(--color-charcoal)]/80 max-w-xl mb-12 leading-relaxed font-light">
+                  Para a mulher profissional que conquistou tudo, mas se perdeu no caminho. Recupere sua identidade, sua voz e sua autoridade interna através de um processo terapêutico profundo e estruturado.
+                </p>
+              </FadeIn>
 
-          <FadeIn delay={0.2}>
-            <p className="text-lg md:text-xl text-[var(--color-charcoal)]/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Para a mulher profissional que conquistou tudo, mas se perdeu no caminho. Recupere sua identidade, sua voz e sua autoridade interna através de um processo terapêutico profundo e estruturado.
-            </p>
-          </FadeIn>
+              <FadeIn delay={0.4}>
+                <button
+                  onClick={() => scrollTo('identificacao')}
+                  className="group relative inline-flex items-center justify-center px-10 py-5 text-sm md:text-base font-semibold tracking-widest text-white uppercase bg-[var(--color-moss)] rounded-full overflow-hidden transition-all hover:bg-[var(--color-moss)]/90 hover:scale-105 shadow-2xl shadow-[var(--color-moss)]/20"
+                >
+                  <span className="relative z-10">Agendar Sessão de Clareza</span>
+                </button>
+              </FadeIn>
+            </div>
 
-          <FadeIn delay={0.4}>
-            <button
-              onClick={() => scrollTo('identificacao')}
-              className="group relative inline-flex items-center justify-center px-8 py-4 text-sm md:text-base font-medium tracking-widest text-white uppercase bg-[var(--color-moss)] rounded-full overflow-hidden transition-all hover:bg-[var(--color-moss)]/90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[var(--color-moss)] focus:ring-offset-2 focus:ring-offset-[var(--color-sand)]"
-            >
-              <span className="relative z-10">Quero voltar para mim mesma</span>
-            </button>
-          </FadeIn>
+            {/* Coluna Imagem */}
+            <div className="order-2 md:order-2 relative">
+              <FadeIn delay={0.3}>
+                <div className="relative z-10 aspect-[4/5] md:aspect-[3/4] rounded-3xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(74,44,89,0.3)] border border-white/20">
+                  <img
+                    src="https://i.imgur.com/bQgBQhl.jpeg"
+                    alt="Claudia Consentino"
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                  {/* Decorative Purple Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-purple-deep)]/20 to-transparent"></div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[var(--color-lilac-accent)]/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
+                <div className="absolute -top-10 -left-10 w-48 h-48 bg-[var(--color-purple-deep)]/5 rounded-full blur-3xl -z-10"></div>
+              </FadeIn>
+            </div>
+          </div>
         </div>
 
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer text-[var(--color-moss)]/50 hover:text-[var(--color-moss)]"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer text-[var(--color-moss)]/50 hover:text-[var(--color-moss)] hidden md:block"
           onClick={() => scrollTo('identificacao')}
         >
           <ChevronDown size={32} strokeWidth={1.5} />
@@ -193,9 +210,9 @@ export default function App() {
           <FadeIn>
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
               <img
-                src="https://picsum.photos/seed/claudia-portrait/800/1066"
+                src="https://i.imgur.com/x983N6m.jpeg"
                 alt="Claudia Consentino"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover transition-all"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 border border-black/5 rounded-2xl"></div>
@@ -271,7 +288,7 @@ export default function App() {
               ].map((step, i) => (
                 <div key={i} className={`relative flex items-center ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[var(--color-terracotta)] shadow-[0_0_20px_rgba(179,93,61,0.8)] z-10"></div>
+                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[var(--color-terracotta)] shadow-[0_0_20px_rgba(176,127,180,0.8)] z-10"></div>
 
                   {/* Card Content */}
                   <div className={`w-full md:w-5/12 ${i % 2 === 0 ? 'md:pr-16 pl-12 md:pl-0 md:text-right' : 'md:pl-16 pl-12 md:text-left'}`}>

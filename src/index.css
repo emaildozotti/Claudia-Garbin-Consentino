@@ -2,10 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-moss: #4A5D4E;
-  --color-terracotta: #B35D3D;
-  --color-sand: #F5F2ED;
-  --color-charcoal: #333333;
+  --color-purple-deep: #4A2C59;
+  --color-lilac-accent: #B07FB4;
+  --color-pearl-bg: #FAF7FC;
+  --color-dark-text: #1A161C;
+
+  --color-moss: var(--color-purple-deep);
+  --color-terracotta: var(--color-lilac-accent);
+  --color-sand: var(--color-pearl-bg);
+  --color-charcoal: var(--color-dark-text);
+
   --font-serif: "Playfair Display", serif;
   --font-sans: "Montserrat", sans-serif;
 }
@@ -27,10 +33,10 @@ h6 {
   font-family: var(--font-serif);
 }
 
-/* Premium Thin Scrollbar - Terracotta Orange */
+/* Premium Thin Scrollbar - Purple Palette */
 * {
   scrollbar-width: thin !important;
-  scrollbar-color: #B35D3D #F5F2ED !important;
+  scrollbar-color: #B07FB4 #FAF7FC !important;
 }
 
 *::-webkit-scrollbar {
@@ -40,17 +46,17 @@ h6 {
 }
 
 *::-webkit-scrollbar-track {
-  background: #F5F2ED !important;
+  background: #FAF7FC !important;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #B35D3D !important;
+  background-color: #B07FB4 !important;
   border-radius: 10px !important;
-  border: 1px solid #F5F2ED !important;
+  border: 1px solid #FAF7FC !important;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background-color: #924d32 !important;
+  background-color: #4A2C59 !important;
 }
 
 /* Specific targeted overrides for root elements */
@@ -61,5 +67,5 @@ body::-webkit-scrollbar {
 
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
-  background-color: #B35D3D !important;
+  background-color: #B07FB4 !important;
 }
