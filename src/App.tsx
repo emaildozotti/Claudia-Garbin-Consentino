@@ -165,7 +165,7 @@ export default function App() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/0IaS_CW6H-U?rel=0"
+                src="https://www.youtube.com/embed/JHe4qs60UbE?rel=0"
                 title="Apresentação Claudia Consentino"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
